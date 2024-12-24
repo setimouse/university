@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 interface SubMenuItem {
@@ -16,7 +17,7 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     name: "首页",
-    href: "/"
+    href: "/",
   },
   {
     name: "留学服务",
@@ -25,8 +26,8 @@ const menuItems: MenuItem[] = [
       { name: "本科申请", href: "/services/undergraduate" },
       { name: "研究生申请", href: "/services/postgraduate" },
       { name: "语言培训", href: "/services/language" },
-      { name: "签证服务", href: "/services/visa" }
-    ]
+      { name: "签证服务", href: "/services/visa" },
+    ],
   },
   {
     name: "合作院校",
@@ -35,8 +36,8 @@ const menuItems: MenuItem[] = [
       { name: "英国院校", href: "/partners/uk" },
       { name: "美国院校", href: "/partners/usa" },
       { name: "澳洲院校", href: "/partners/australia" },
-      { name: "加拿大院校", href: "/partners/canada" }
-    ]
+      { name: "加拿大院校", href: "/partners/canada" },
+    ],
   },
   {
     name: "推荐课程",
@@ -45,12 +46,12 @@ const menuItems: MenuItem[] = [
       { name: "商科课程", href: "/courses/business" },
       { name: "工程课程", href: "/courses/engineering" },
       { name: "艺术课程", href: "/courses/art" },
-      { name: "医学课程", href: "/courses/medicine" }
-    ]
+      { name: "医学课程", href: "/courses/medicine" },
+    ],
   },
   {
     name: "成功案例",
-    href: "/cases"
+    href: "/cases",
   },
   {
     name: "资讯活动",
@@ -58,8 +59,8 @@ const menuItems: MenuItem[] = [
     subItems: [
       { name: "留学资讯", href: "/news/study-abroad" },
       { name: "活动预告", href: "/news/events" },
-      { name: "政策解读", href: "/news/policy" }
-    ]
+      { name: "政策解读", href: "/news/policy" },
+    ],
   },
   {
     name: "关于我们",
@@ -67,9 +68,9 @@ const menuItems: MenuItem[] = [
     subItems: [
       { name: "公司简介", href: "/about/company" },
       { name: "团队介绍", href: "/about/team" },
-      { name: "联系我们", href: "/about/contact" }
-    ]
-  }
+      { name: "联系我们", href: "/about/contact" },
+    ],
+  },
 ];
 
 export default function Navbar() {
@@ -87,13 +88,18 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const handleItemClick = (index: number, href: string, hasSubItems: boolean, e: React.MouseEvent) => {
+  const handleItemClick = (
+    index: number,
+    href: string,
+    hasSubItems: boolean,
+    e: React.MouseEvent
+  ) => {
     if (hasSubItems) {
       e.preventDefault();
       setExpandedItem(expandedItem === index ? null : index);
@@ -103,9 +109,9 @@ export default function Navbar() {
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full backdrop-blur-sm z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-white/80' : 'bg-transparent'
+        scrolled ? "bg-white/80" : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -114,22 +120,22 @@ export default function Navbar() {
             src="/logo.png"
             alt="University Choice"
             className={`h-8 transition-all duration-300 ${
-              scrolled ? '' : 'brightness-0 invert'
+              scrolled ? "" : "brightness-0 invert"
             }`}
           />
         </div>
 
         {/* Mobile menu button */}
-        <button 
+        <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden"
         >
-          <span 
+          <span
             className={`material-icons transition-colors duration-300 ${
-              scrolled ? 'text-gray-800' : 'text-white'
+              scrolled ? "text-gray-800" : "text-white"
             }`}
           >
-            {mobileMenuOpen ? 'close' : 'menu'}
+            {mobileMenuOpen ? "close" : "menu"}
           </span>
         </button>
 
@@ -138,17 +144,21 @@ export default function Navbar() {
           <div className="flex space-x-6">
             {menuItems.map((item, index) => (
               <div key={index} className="relative group">
-                <a 
-                  href={item.href} 
+                <a
+                  href={item.href}
                   className={`py-2 flex items-center transition-colors duration-300 ${
-                    scrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                    scrolled
+                      ? "text-gray-800 hover:text-blue-600"
+                      : "text-white hover:text-blue-200"
                   }`}
                 >
                   {item.name}
                   {item.subItems && (
-                    <span 
+                    <span
                       className={`material-icons ml-1 text-sm transition-all duration-300 group-hover:rotate-180 ${
-                        scrolled ? 'text-gray-800 opacity-60' : 'text-white opacity-40'
+                        scrolled
+                          ? "text-gray-800 opacity-60"
+                          : "text-white opacity-40"
                       }`}
                     >
                       keyboard_arrow_down
@@ -174,30 +184,34 @@ export default function Navbar() {
             ))}
           </div>
           <div className="flex space-x-2">
-            <a 
-              href="/en" 
+            <Link
+              href="/en"
               className={`transition-colors duration-300 ${
-                scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white'
+                scrolled
+                  ? "text-gray-600 hover:text-gray-900"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               English
-            </a>
-            <span className={scrolled ? 'text-gray-600' : 'text-white'}>|</span>
-            <a 
-              href="/" 
+            </Link>
+            <span className={scrolled ? "text-gray-600" : "text-white"}>|</span>
+            <Link
+              href="/"
               className={`transition-colors duration-300 ${
-                scrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                scrolled
+                  ? "text-gray-800 hover:text-blue-600"
+                  : "text-white hover:text-blue-200"
               }`}
             >
               中文
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div 
+        <div
           className={`fixed inset-0 bg-white z-50 transition-transform duration-300 md:hidden ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="container mx-auto px-4 py-6 bg-white">
@@ -209,16 +223,18 @@ export default function Navbar() {
             <div className="space-y-4">
               {menuItems.map((item, index) => (
                 <div key={index}>
-                  <a 
+                  <a
                     href={item.href}
-                    className="text-gray-800 text-lg font-medium block py-2 flex items-center justify-between"
-                    onClick={(e) => handleItemClick(index, item.href, !!item.subItems, e)}
+                    className="text-gray-800 text-lg font-medium py-2 flex items-center justify-between"
+                    onClick={(e) =>
+                      handleItemClick(index, item.href, !!item.subItems, e)
+                    }
                   >
                     {item.name}
                     {item.subItems && (
-                      <span 
+                      <span
                         className={`material-icons transition-transform duration-300 ${
-                          expandedItem === index ? 'rotate-180' : ''
+                          expandedItem === index ? "rotate-180" : ""
                         }`}
                       >
                         keyboard_arrow_down
@@ -226,9 +242,11 @@ export default function Navbar() {
                     )}
                   </a>
                   {item.subItems && (
-                    <div 
+                    <div
                       className={`pl-4 space-y-2 mt-2 overflow-hidden transition-all duration-300 ${
-                        expandedItem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        expandedItem === index
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
                       {item.subItems.map((subItem, subIndex) => (
@@ -251,9 +269,9 @@ export default function Navbar() {
                 English
               </a>
               <span className="text-gray-600">|</span>
-              <a href="/" className="text-gray-800 hover:text-blue-600">
+              <Link href="/" className="text-gray-800 hover:text-blue-600">
                 中文
-              </a>
+              </Link>
             </div>
           </div>
         </div>
