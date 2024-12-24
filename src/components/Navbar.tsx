@@ -74,6 +74,8 @@ const menuItems: MenuItem[] = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,6 +93,15 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleItemClick = (index: number, href: string, hasSubItems: boolean, e: React.MouseEvent) => {
+    if (hasSubItems) {
+      e.preventDefault();
+      setExpandedItem(expandedItem === index ? null : index);
+    } else {
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header 
       className={`fixed w-full backdrop-blur-sm z-50 transition-colors duration-300 ${
@@ -107,7 +118,23 @@ export default function Navbar() {
             }`}
           />
         </div>
-        <div className="flex items-center space-x-12">
+
+        {/* Mobile menu button */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden"
+        >
+          <span 
+            className={`material-icons transition-colors duration-300 ${
+              scrolled ? 'text-gray-800' : 'text-white'
+            }`}
+          >
+            {mobileMenuOpen ? 'close' : 'menu'}
+          </span>
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-12">
           <div className="flex space-x-6">
             {menuItems.map((item, index) => (
               <div key={index} className="relative group">
@@ -164,6 +191,70 @@ export default function Navbar() {
             >
               中文
             </a>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div 
+          className={`fixed inset-0 bg-white z-50 transition-transform duration-300 md:hidden ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="container mx-auto px-4 py-6 bg-white">
+            <div className="flex justify-end mb-8">
+              <button onClick={() => setMobileMenuOpen(false)}>
+                <span className="material-icons text-gray-800">close</span>
+              </button>
+            </div>
+            <div className="space-y-4">
+              {menuItems.map((item, index) => (
+                <div key={index}>
+                  <a 
+                    href={item.href}
+                    className="text-gray-800 text-lg font-medium block py-2 flex items-center justify-between"
+                    onClick={(e) => handleItemClick(index, item.href, !!item.subItems, e)}
+                  >
+                    {item.name}
+                    {item.subItems && (
+                      <span 
+                        className={`material-icons transition-transform duration-300 ${
+                          expandedItem === index ? 'rotate-180' : ''
+                        }`}
+                      >
+                        keyboard_arrow_down
+                      </span>
+                    )}
+                  </a>
+                  {item.subItems && (
+                    <div 
+                      className={`pl-4 space-y-2 mt-2 overflow-hidden transition-all duration-300 ${
+                        expandedItem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      {item.subItems.map((subItem, subIndex) => (
+                        <a
+                          key={subIndex}
+                          href={subItem.href}
+                          className="text-gray-600 block py-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex justify-center space-x-4">
+              <a href="/en" className="text-gray-600 hover:text-gray-900">
+                English
+              </a>
+              <span className="text-gray-600">|</span>
+              <a href="/" className="text-gray-800 hover:text-blue-600">
+                中文
+              </a>
+            </div>
           </div>
         </div>
       </nav>
