@@ -33,8 +33,8 @@ export default function HomeHero() {
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <div className="relative container mx-auto px-4 h-full flex items-center">
-        <div className="text-white max-w-2xl">
+      <div className="relative container mx-auto px-4 h-full flex items-center justify-center md:justify-start">
+        <div className="text-white max-w-2xl text-center md:text-left">
           <h1 className="text-5xl font-bold mb-6">开启您的留学之旅</h1>
           <p className="text-xl mb-8">
             专业的留学咨询服务，为您的学术发展保驾护航

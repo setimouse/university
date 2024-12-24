@@ -10,7 +10,7 @@ export default function HomeStats() {
             作为您的升学规划顾问，我们将以专业的态度为您提供一站式的留学咨询服务，让您的留学之路更加顺畅。
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 text-center">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
           <div>
             <h3 className="text-3xl font-bold text-blue-600">13年</h3>
             <p className="text-gray-600 mt-2">行业经验</p>

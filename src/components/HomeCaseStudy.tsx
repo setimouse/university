@@ -1,10 +1,10 @@
 export default function HomeCaseStudy() {
   return (
-    <section className="bg-[#00BFB3] py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#00BCD4] py-16 flex items-center min-h-screen">
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* 左侧文字内容 */}
-          <div className="text-white">
+          <div className="text-white text-center md:text-left">
             <h2 className="text-4xl font-bold mb-4">Case study</h2>
             <p className="text-xl mb-8">成功案例</p>
             <p className="mb-8">
@@ -16,20 +16,20 @@ export default function HomeCaseStudy() {
           </div>
 
           {/* 右侧图片 */}
-          <div className="flex space-x-8">
-              <img
-                src="https://f.cdn-static.cn/61712_16479279116875.jpg?imageView2/2/w/495/q/89/format/webp"
-                alt="毕业典礼照片"
-                className="w-1/2 h-64 object-cover rounded-lg"
-              />
-              <img
-                src="https://f.cdn-static.cn/61712_16479279113584.jpg?imageView2/2/w/495/q/89/format/webp"
-                alt="课堂照片"
-                className="w-1/2 h-64 object-cover rounded-lg"
-              />
+          <div className="hidden md:flex space-x-8">
+            <img
+              src="https://f.cdn-static.cn/61712_16479279116875.jpg?imageView2/2/w/495/q/89/format/webp"
+              alt="毕业典礼照片"
+              className="w-1/2 h-64 object-cover rounded-lg"
+            />
+            <img
+              src="https://f.cdn-static.cn/61712_16479279113584.jpg?imageView2/2/w/495/q/89/format/webp"
+              alt="课堂照片"
+              className="w-1/2 h-64 object-cover rounded-lg"
+            />
           </div>
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}
