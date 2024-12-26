@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "University Choice",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
