@@ -1,7 +1,6 @@
 import { NewsItem, news } from "@/config/news";
 import Link from "next/link";
 import NewsNavigation from "./NewsNavigation";
-import ShareButtons from "./ShareButtons";
 
 interface Props {
   newsItem: NewsItem;

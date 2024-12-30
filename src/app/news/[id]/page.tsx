@@ -6,13 +6,14 @@ import { notFound } from "next/navigation";
 import ContactButtons from "@/components/ContactButtons";
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function NewsDetailPage({ params }: Props) {
-  const newsItem = news.find((item) => item.id === params.id);
+export default async function NewsDetailPage({ params }: Props) {
+  const resolvedParams = await params;
+  const newsItem = news.find((item) => item.id === resolvedParams.id);
 
   if (!newsItem) {
     notFound();

@@ -4,7 +4,7 @@ import { auCourseCategories } from "@/config/au-courses";
 import { useState } from "react";
 
 export default function AUCoursesList() {
-  const [activeCategory, setActiveCategory] = useState(
+  const [activeCategory, ] = useState(
     auCourseCategories[0].id
   );
 

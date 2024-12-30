@@ -24,4 +24,4 @@ export default function PartnersHero() {
       </div>
     </section>
   );
-} 
+}
