@@ -32,8 +32,8 @@ const menuItems: MenuItem[] = [
     name: "合作院校",
     href: "/partners",
     subItems: [
-      { name: "合作院校", href: "/partners/universities" },
-      { name: "官员推荐", href: "/partners/official" },
+      { name: "合作院校", href: "/partners#universities" },
+      { name: "官员推荐", href: "/partners#official" },
     ],
   },
   {
@@ -49,8 +49,8 @@ const menuItems: MenuItem[] = [
     name: "成功案例",
     href: "/cases",
     subItems: [
-      { name: "客户感言", href: "/cases/testimonials" },
-      { name: "案例展示", href: "/cases/success-cases" },
+      { name: "客户感言", href: "/cases#testimonials" },
+      { name: "案例展示", href: "/cases#studies" },
     ],
   },
   {

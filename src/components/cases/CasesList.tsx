@@ -8,7 +8,7 @@ export default function CasesList() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         {/* 客户评价视频 */}
-        <div className="mb-20">
+        <div id="testimonials" className="mb-20">
           <h2 className="text-center text-3xl font-bold text-blue-600 mb-2">
             Customer testimonials
           </h2>
@@ -39,7 +39,7 @@ export default function CasesList() {
         </div>
 
         {/* 案例研究 */}
-        <div>
+        <div id="studies" className="mb-20">
           <h2 className="text-center text-3xl font-bold text-blue-600 mb-2">
             Case Studies
           </h2>
