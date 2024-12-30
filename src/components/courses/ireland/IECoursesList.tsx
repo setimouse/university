@@ -1,7 +1,6 @@
 "use client";
 
 import { ieCourseCategories } from "@/config/ie-courses";
-import { useState } from "react";
 
 export default function IECoursesList() {
   return (
