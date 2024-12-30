@@ -56,20 +56,20 @@ const menuItems: MenuItem[] = [
   {
     name: "资讯活动",
     href: "/news",
-    subItems: [
-      { name: "留学资讯", href: "/news/study-abroad" },
-      { name: "活动预告", href: "/news/events" },
-      { name: "政策解读", href: "/news/policy" },
-    ],
+    // subItems: [
+    // { name: "留学资讯", href: "/news/study-abroad" },
+    // { name: "活动预告", href: "/news/events" },
+    // { name: "政策解读", href: "/news/policy" },
+    // ],
   },
   {
     name: "关于我们",
     href: "/about",
-    subItems: [
-      { name: "公司简介", href: "/about/company" },
-      { name: "团队介绍", href: "/about/team" },
-      { name: "联系我们", href: "/about/contact" },
-    ],
+    // subItems: [
+    //   { name: "公司简介", href: "/about/company" },
+    //   { name: "团队介绍", href: "/about/team" },
+    //   { name: "联系我们", href: "/about/contact" },
+    // ],
   },
 ];
 
