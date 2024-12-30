@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import NewsDetail from "@/components/news/NewsDetail";
 import NewsDetailHero from "@/components/news/NewsDetailHero";
 import { notFound } from "next/navigation";
+import ContactButtons from "@/components/ContactButtons";
 
 interface Props {
   params: {
@@ -26,6 +27,7 @@ export default function NewsDetailPage({ params }: Props) {
         image={newsItem.image}
       />
       <NewsDetail newsItem={newsItem} />
+      <ContactButtons />
       <Footer />
     </main>
   );

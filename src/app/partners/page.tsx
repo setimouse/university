@@ -1,14 +1,16 @@
-import UniversitiesHero from "@/components/partners/universities/UniversitiesHero";
+import Footer from "@/components/Footer";
+import PartnersHero from "@/components/partners/PartnersHero";
 import UniversitiesList from "@/components/partners/universities/UniversitiesList";
 import UniversitiesTestimonials from "@/components/partners/universities/UniversitiesTestimonials";
-import Footer from "@/components/Footer";
+import ContactButtons from "@/components/ContactButtons";
 
-export default function UniversitiesPage() {
+export default function PartnersPage() {
   return (
     <main>
-      <UniversitiesHero />
+      <PartnersHero />
       <UniversitiesList />
       <UniversitiesTestimonials />
+      <ContactButtons />
       <Footer />
     </main>
   );
