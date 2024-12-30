@@ -15,9 +15,9 @@ export default function UniversitiesList() {
               target="_blank"
               rel="noopener noreferrer"
               className="block"
+              key={index}
             >
               <div
-                key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
               >
                 <div className="relative">
