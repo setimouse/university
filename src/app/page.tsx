@@ -11,15 +11,17 @@ import HomeStrength from "@/components/HomeStrength";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen scroll-smooth">
       <HomeHero />
-      <HomeStats />
-      <Home1v1 />
-      <ApplicationService />
-      <HomeQnA />
-      <HomeCaseStudy />
-      <HomePartners />
-      <HomeStrength />
+      <div className="space-y-20">
+        <HomeStats />
+        <Home1v1 />
+        <ApplicationService />
+        <HomeQnA />
+        <HomeCaseStudy />
+        <HomePartners />
+        <HomeStrength />
+      </div>
       <Footer />
       <ContactButtons />
     </div>

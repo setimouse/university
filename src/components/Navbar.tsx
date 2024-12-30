@@ -23,10 +23,9 @@ const menuItems: MenuItem[] = [
     name: "留学服务",
     href: "/services",
     subItems: [
-      { name: "本科申请", href: "/services/undergraduate" },
-      { name: "研究生申请", href: "/services/postgraduate" },
-      { name: "语言培训", href: "/services/language" },
-      { name: "签证服务", href: "/services/visa" },
+      { name: "留学申请", href: "/services/application" },
+      { name: "学术辅导", href: "/services/academic-support" },
+      { name: "留学签证", href: "/services/visa-services" },
     ],
   },
   {

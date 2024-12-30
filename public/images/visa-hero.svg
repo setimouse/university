@@ -1,0 +1,26 @@
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.2">
+    <!-- 北美洲 -->
+    <path d="M350 150 L450 180 L500 200 L520 250 L480 300 L400 320 L380 280 L320 260 L300 200 Z" fill="white"/>
+    
+    <!-- 南美洲 -->
+    <path d="M400 400 L450 450 L430 550 L380 580 L350 520 L380 450 Z" fill="white"/>
+    
+    <!-- 欧洲 -->
+    <path d="M650 150 L750 140 L800 180 L780 220 L700 240 L650 200 Z" fill="white"/>
+    
+    <!-- 非洲 -->
+    <path d="M650 300 L750 280 L800 350 L780 450 L700 480 L650 400 Z" fill="white"/>
+    
+    <!-- 亚洲 -->
+    <path d="M800 150 L1000 180 L1050 250 L1000 350 L900 380 L850 300 L800 250 Z" fill="white"/>
+    
+    <!-- 大洋洲 -->
+    <path d="M950 450 L1050 470 L1080 520 L1050 550 L980 540 L950 500 Z" fill="white"/>
+    
+    <!-- 连接线 -->
+    <path d="M400 200 Q 550 180 650 180" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M800 200 Q 900 220 1000 200" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M700 300 Q 800 320 900 300" stroke="white" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+</svg> 
