@@ -32,25 +32,26 @@ const menuItems: MenuItem[] = [
     name: "合作院校",
     href: "/partners",
     subItems: [
-      { name: "英国院校", href: "/partners/uk" },
-      { name: "美国院校", href: "/partners/usa" },
-      { name: "澳洲院校", href: "/partners/australia" },
-      { name: "加拿大院校", href: "/partners/canada" },
+      { name: "合作院校", href: "/partners/universities" },
+      { name: "官员推荐", href: "/partners/official" },
     ],
   },
   {
     name: "推荐课程",
     href: "/courses",
     subItems: [
-      { name: "商科课程", href: "/courses/business" },
-      { name: "工程课程", href: "/courses/engineering" },
-      { name: "艺术课程", href: "/courses/art" },
-      { name: "医学课程", href: "/courses/medicine" },
+      { name: "英国", href: "/courses/uk" },
+      { name: "澳洲", href: "/courses/australia" },
+      { name: "爱尔兰", href: "/courses/ireland" },
     ],
   },
   {
     name: "成功案例",
     href: "/cases",
+    subItems: [
+      { name: "客户感言", href: "/cases/testimonials" },
+      { name: "案例展示", href: "/cases/success-cases" },
+    ],
   },
   {
     name: "资讯活动",
